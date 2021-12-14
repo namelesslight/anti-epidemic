@@ -4,6 +4,7 @@ import java.sql.Date;
 
 /**
  * @author hqb
+ * 管理员表
  */
 public class Admin {
 
