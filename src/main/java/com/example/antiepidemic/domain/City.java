@@ -11,7 +11,7 @@ public class City {
     /**
      * 城市id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 城市名
@@ -26,12 +26,12 @@ public class City {
     /**
      * 城市图片id
      */
-    private Integer image;
+    private Long image;
 
     /**
      * 录入者id
      */
-    private Integer inputer;
+    private Long inputer;
 
     /**
      * 逻辑删除
@@ -48,11 +48,11 @@ public class City {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,19 +72,19 @@ public class City {
         this.story = story;
     }
 
-    public Integer getImage() {
+    public Long getImage() {
         return image;
     }
 
-    public void setImage(Integer image) {
+    public void setImage(Long image) {
         this.image = image;
     }
 
-    public Integer getInputer() {
+    public Long getInputer() {
         return inputer;
     }
 
-    public void setInputer(Integer inputer) {
+    public void setInputer(Long inputer) {
         this.inputer = inputer;
     }
 

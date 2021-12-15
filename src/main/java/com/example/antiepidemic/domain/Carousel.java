@@ -11,7 +11,7 @@ public class Carousel {
     /**
      * 轮播图id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 轮播图名
@@ -21,7 +21,7 @@ public class Carousel {
     /**
      * 轮播图图片id
      */
-    private Integer image;
+    private Long image;
 
     /**
      * 管理员id
@@ -43,11 +43,11 @@ public class Carousel {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,11 +59,11 @@ public class Carousel {
         this.name = name;
     }
 
-    public Integer getImage() {
+    public Long getImage() {
         return image;
     }
 
-    public void setImage(Integer image) {
+    public void setImage(Long image) {
         this.image = image;
     }
 

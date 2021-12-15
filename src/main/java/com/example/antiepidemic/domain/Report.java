@@ -11,7 +11,7 @@ public class Report {
     /**
      * 报告id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 报告标题
@@ -26,12 +26,12 @@ public class Report {
     /**
      * 报告图片id
      */
-    private String image;
+    private Long image;
 
     /**
      * 录入者id
      */
-    private Integer inputer;
+    private Long inputer;
 
     /**
      * 删除
@@ -48,11 +48,11 @@ public class Report {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,19 +72,19 @@ public class Report {
         this.content = content;
     }
 
-    public String getImage() {
+    public Long getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Long image) {
         this.image = image;
     }
 
-    public Integer getInputer() {
+    public Long getInputer() {
         return inputer;
     }
 
-    public void setInputer(Integer inputer) {
+    public void setInputer(Long inputer) {
         this.inputer = inputer;
     }
 

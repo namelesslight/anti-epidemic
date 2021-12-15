@@ -115,10 +115,10 @@ public class ImageDaoImpl implements ImageDao {
             Image image = null;
             while(resultSet.next()){
                 image = new Image();
-                image.setId(resultSet.getInt("id"));
+                image.setId(resultSet.getLong("id"));
                 image.setName(resultSet.getString("name"));
                 image.setPath(resultSet.getString("path"));
-                image.setInputer(resultSet.getInt("inputer"));
+                image.setInputer(resultSet.getLong("inputer"));
                 image.setDelete(resultSet.getBoolean("is_delete"));
                 image.setGmtCreate(resultSet.getDate("gmt_create"));
                 image.setGmtUpdate(resultSet.getDate("gmt_update"));
@@ -147,10 +147,10 @@ public class ImageDaoImpl implements ImageDao {
             List<Image> imageList = new ArrayList<>();
             while (resultSet.next()){
                 Image image = new Image();
-                image.setId(resultSet.getInt("id"));
+                image.setId(resultSet.getLong("id"));
                 image.setName(resultSet.getString("name"));
                 image.setPath(resultSet.getString("path"));
-                image.setInputer(resultSet.getInt("inputer"));
+                image.setInputer(resultSet.getLong("inputer"));
                 image.setDelete(resultSet.getBoolean("is_delete"));
                 image.setGmtCreate(resultSet.getDate("gmt_create"));
                 image.setGmtUpdate(resultSet.getDate("gmt_update"));

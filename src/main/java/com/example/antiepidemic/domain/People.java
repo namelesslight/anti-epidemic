@@ -10,7 +10,7 @@ public class People {
     /**
      * 人物编号
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 人物名
@@ -25,12 +25,12 @@ public class People {
     /**
      * 人物图片
      */
-    private Integer image;
+    private Long image;
 
     /**
      * 录入者id
      */
-    private Integer inputer;
+    private Long inputer;
 
     /**
      * 逻辑删除
@@ -47,11 +47,11 @@ public class People {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -71,19 +71,19 @@ public class People {
         this.story = story;
     }
 
-    public Integer getImage() {
+    public Long getImage() {
         return image;
     }
 
-    public void setImage(Integer image) {
+    public void setImage(Long image) {
         this.image = image;
     }
 
-    public Integer getInputer() {
+    public Long getInputer() {
         return inputer;
     }
 
-    public void setInputer(Integer inputer) {
+    public void setInputer(Long inputer) {
         this.inputer = inputer;
     }
 

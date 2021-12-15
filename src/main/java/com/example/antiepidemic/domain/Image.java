@@ -11,7 +11,7 @@ public class Image {
     /**
      * 图片id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 图片名
@@ -26,7 +26,7 @@ public class Image {
     /**
      * 图片录入者
      */
-    private Integer inputer;
+    private Long inputer;
 
     /**
      * 逻辑删除
@@ -43,11 +43,11 @@ public class Image {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -67,11 +67,11 @@ public class Image {
         this.path = path;
     }
 
-    public Integer getInputer() {
+    public Long getInputer() {
         return inputer;
     }
 
-    public void setInputer(Integer inputer) {
+    public void setInputer(Long inputer) {
         this.inputer = inputer;
     }
 

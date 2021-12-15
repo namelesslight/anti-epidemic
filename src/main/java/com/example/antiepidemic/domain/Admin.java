@@ -10,7 +10,7 @@ public class Admin {
     /**
      * 管理员id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 管理员用户名
@@ -42,11 +42,11 @@ public class Admin {
      */
     private Date gmtUpdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
