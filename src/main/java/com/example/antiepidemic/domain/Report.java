@@ -1,6 +1,6 @@
 package com.example.antiepidemic.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author fzn

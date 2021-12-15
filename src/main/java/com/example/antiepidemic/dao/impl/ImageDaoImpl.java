@@ -22,7 +22,7 @@ public class ImageDaoImpl implements ImageDao {
     public Integer insertImage(String name, String path, Integer inputer) {
         try{
             connection = DruidUtils.getConnection();
-            String sql = "insert into `image` values (null,?,?,?,0,now(),now());";
+            String sql = "insert into `tb_image` values (null,?,?,?,0,now(),now());";
             statement = connection.prepareStatement(sql);
             statement.setString(1,name);
             statement.setString(2,path);
@@ -38,11 +38,37 @@ public class ImageDaoImpl implements ImageDao {
 
     @Override
     public Integer updateImage(String id, String name, String path) {
+        try{
+            connection = DruidUtils.getConnection();
+            String sql = "update `tb_image` " +
+                    "set name = ? ,path = ?,gmt_update = now() where id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,name);
+            statement.setString(2,path);
+            statement.setString(3,id);
+            Integer result = statement.executeUpdate();
+            DruidUtils.close(resultSet,statement,connection);
+            return result;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public Integer deleteImage(String id) {
+        try{
+            connection = DruidUtils.getConnection();
+            String sql = "update `tb_image` " +
+                    "set is_delete = 1,gmt_update = now() where id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,id);
+            Integer result = statement.executeUpdate();
+            DruidUtils.close(resultSet,statement,connection);
+            return result;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
