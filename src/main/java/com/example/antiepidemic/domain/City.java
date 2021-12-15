@@ -3,24 +3,49 @@ package com.example.antiepidemic.domain;
 import java.util.Date;
 
 /**
+ * 城市表
  * @author zcl
  */
 public class City {
 
+    /**
+     * 城市id
+     */
     private Integer id;
 
+    /**
+     * 城市名
+     */
     private String name;
 
+    /**
+     * 城市相关故事
+     */
     private String story;
 
+    /**
+     * 城市图片id
+     */
     private Integer image;
 
+    /**
+     * 录入者id
+     */
     private Integer inputer;
 
+    /**
+     * 逻辑删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {

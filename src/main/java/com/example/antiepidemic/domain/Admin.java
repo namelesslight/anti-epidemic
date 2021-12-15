@@ -7,19 +7,39 @@ import java.util.Date;
  * 管理员表
  */
 public class Admin {
-
+    /**
+     * 管理员id
+     */
     private Integer id;
 
+    /**
+     * 管理员用户名
+     */
     private String name;
 
+    /**
+     * 管理员密码
+     */
     private String passwd;
 
+    /**
+     * 管理员权限
+     */
     private String role;
 
+    /**
+     * 逻辑删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {

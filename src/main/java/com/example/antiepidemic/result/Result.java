@@ -1,5 +1,7 @@
 package com.example.antiepidemic.result;
 
+import java.util.Date;
+
 /**
  * 统一返回给前端的封装类
  */
@@ -19,6 +21,15 @@ public class Result {
      * url路径
      */
     private String path;
+
+    public Result() {
+    }
+
+    public Result(String code, Object data, String path) {
+        this.code = code;
+        this.data = data;
+        this.path = path;
+    }
 
     public String getCode() {
         return code;

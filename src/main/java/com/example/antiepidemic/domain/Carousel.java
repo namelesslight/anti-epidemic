@@ -4,21 +4,43 @@ import java.util.Date;
 
 /**
  * @author hqb
+ * 轮播图表
  */
 public class Carousel {
 
+    /**
+     * 轮播图id
+     */
     private Integer id;
 
+    /**
+     * 轮播图名
+     */
     private String name;
 
+    /**
+     * 轮播图图片id
+     */
     private Integer image;
 
+    /**
+     * 管理员id
+     */
     private Integer inputer;
 
+    /**
+     * 逻辑删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {

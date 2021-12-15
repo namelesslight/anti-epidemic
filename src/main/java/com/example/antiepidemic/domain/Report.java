@@ -3,24 +3,49 @@ package com.example.antiepidemic.domain;
 import java.util.Date;
 
 /**
+ * 报告表
  * @author fzn
  */
 public class Report {
 
+    /**
+     * 报告id
+     */
     private Integer id;
 
+    /**
+     * 报告标题
+     */
     private String title;
 
+    /**
+     * 报告内容
+     */
     private String content;
 
+    /**
+     * 报告图片id
+     */
     private String image;
 
+    /**
+     * 录入者id
+     */
     private Integer inputer;
 
+    /**
+     * 删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {

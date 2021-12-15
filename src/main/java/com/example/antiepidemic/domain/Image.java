@@ -3,22 +3,44 @@ package com.example.antiepidemic.domain;
 import java.util.Date;
 
 /**
+ * 图片表
  * @author zcl
  */
 public class Image {
 
+    /**
+     * 图片id
+     */
     private Integer id;
 
+    /**
+     * 图片名
+     */
     private String name;
 
+    /**
+     * 图片路径
+     */
     private String path;
 
+    /**
+     * 图片录入者
+     */
     private Integer inputer;
 
+    /**
+     * 逻辑删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {

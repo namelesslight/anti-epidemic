@@ -3,24 +3,48 @@ package com.example.antiepidemic.domain;
 import java.util.Date;
 
 /**
+ * 人物表
  * @author fzn
  */
 public class People {
-
+    /**
+     * 人物编号
+     */
     private Integer id;
 
+    /**
+     * 人物名
+     */
     private String name;
 
+    /**
+     * 人物相关故事
+     */
     private String story;
 
+    /**
+     * 人物图片
+     */
     private Integer image;
 
+    /**
+     * 录入者id
+     */
     private Integer inputer;
 
+    /**
+     * 逻辑删除
+     */
     private Boolean isDelete;
 
+    /**
+     * 创建时间
+     */
     private Date gmtCreate;
 
+    /**
+     * 更新时间
+     */
     private Date gmtUpdate;
 
     public Integer getId() {
