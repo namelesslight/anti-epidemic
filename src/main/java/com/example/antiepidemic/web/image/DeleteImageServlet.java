@@ -14,7 +14,7 @@ import java.util.Map;
 @WebServlet(name = "DeleteImageServlet", value = "/deleteImage")
 public class DeleteImageServlet extends HttpServlet {
 
-    ImageService imageService = new ImageServiceImpl();
+    private ImageService imageService = new ImageServiceImpl();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,8 +22,8 @@ public class DeleteImageServlet extends HttpServlet {
         response.setContentType("text/plain;charset=utf-8");
         ObjectMapper mapper = new ObjectMapper();
         Map<String,Object> read = mapper.readValue(request.getReader(), Map.class);
-        Integer id = (Integer)read.get("id");
-        Boolean result = imageService.deleteImage(id);
+        Integer id = (Integer) read.get("id");
+        Boolean result = imageService.deleteImage(Long.valueOf(id));
         mapper.writeValue(response.getWriter(),new Result("200",result,"/deleteImage"));
     }
 }

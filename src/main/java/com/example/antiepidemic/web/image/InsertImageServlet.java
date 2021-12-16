@@ -14,7 +14,7 @@ import java.util.Map;
 @WebServlet(name = "InsertImageServlet", value = "/insertImage")
 public class InsertImageServlet extends HttpServlet {
 
-    ImageService imageService = new ImageServiceImpl();
+    private ImageService imageService = new ImageServiceImpl();
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class InsertImageServlet extends HttpServlet {
         String name = (String)read.get("name");
         String path = (String) read.get("path");
         Integer inputer = (Integer) read.get("inputer");
-        Boolean result = imageService.insertImage(name, path, inputer);
+        Boolean result = imageService.insertImage(name, path, Long.valueOf(inputer));
         mapper.writeValue(response.getWriter(),new Result("200",result,"/insertImage"));
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ImageServiceImpl implements ImageService {
 
-    ImageDao imageDao = new ImageDaoImpl();
+    private ImageDao imageDao = new ImageDaoImpl();
 
     /**
      * 添加图片
@@ -24,7 +24,7 @@ public class ImageServiceImpl implements ImageService {
      * @return java.lang.Boolean
      */
     @Override
-    public Boolean insertImage(String name, String path, Integer inputer) {
+    public Boolean insertImage(String name, String path, Long inputer) {
         return imageDao.insertImage(name,path,inputer) == 1;
     }
 
@@ -36,7 +36,7 @@ public class ImageServiceImpl implements ImageService {
      * @return java.lang.Boolean
      */
     @Override
-    public Boolean updateImage(Integer id, String name, String path) {
+    public Boolean updateImage(Long id, String name, String path) {
         return imageDao.updateImage(id,name,path) == 1;
     }
 
@@ -46,7 +46,7 @@ public class ImageServiceImpl implements ImageService {
      * @return java.lang.Boolean
      */
     @Override
-    public Boolean deleteImage(Integer id) {
+    public Boolean deleteImage(Long id) {
         return imageDao.deleteImage(id) == 1;
     }
 
@@ -56,7 +56,7 @@ public class ImageServiceImpl implements ImageService {
      * @return com.example.antiepidemic.domain.Image
      */
     @Override
-    public Image queryOneImage(Integer id) {
+    public Image queryOneImage(Long id) {
         return imageDao.queryOneImage(id);
     }
 

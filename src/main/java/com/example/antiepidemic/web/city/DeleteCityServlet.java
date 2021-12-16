@@ -1,8 +1,8 @@
-package com.example.antiepidemic.web.image;
+package com.example.antiepidemic.web.city;
 
 import com.example.antiepidemic.result.Result;
-import com.example.antiepidemic.service.ImageService;
-import com.example.antiepidemic.service.impl.ImageServiceImpl;
+import com.example.antiepidemic.service.CityService;
+import com.example.antiepidemic.service.impl.CityServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.*;
@@ -11,10 +11,10 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet(name = "UpdateImageServlet", value = "/updateImage")
-public class UpdateImageServlet extends HttpServlet {
+@WebServlet(name = "DeleteCityServlet", value = "/deleteCity")
+public class DeleteCityServlet extends HttpServlet {
 
-    private ImageService imageService = new ImageServiceImpl();
+    private CityService cityService = new CityServiceImpl();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,9 +23,7 @@ public class UpdateImageServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         Map<String,Object> read = mapper.readValue(request.getReader(), Map.class);
         Integer id = (Integer) read.get("id");
-        String name = (String)read.get("name");
-        String path = (String) read.get("path");
-        Boolean result = imageService.updateImage(Long.valueOf(id), name, path);
-        mapper.writeValue(response.getWriter(),new Result("200",result,"/updateImage"));
+        Boolean result = cityService.deleteCity(Long.valueOf(id));
+        mapper.writeValue(response.getWriter(),new Result("200",result,"/deleteCity"));
     }
 }

@@ -31,14 +31,14 @@ public class ImageDaoImpl implements ImageDao {
      * @return java.lang.Integer
      */
     @Override
-    public Integer insertImage(String name, String path, Integer inputer) {
+    public Integer insertImage(String name, String path, Long inputer) {
         try{
             connection = DruidUtils.getConnection();
             String sql = "insert into `tb_image` values (null,?,?,?,0,now(),now());";
             statement = connection.prepareStatement(sql);
             statement.setString(1,name);
             statement.setString(2,path);
-            statement.setInt(3,inputer);
+            statement.setLong(3,inputer);
             Integer result = statement.executeUpdate();
             DruidUtils.close(resultSet,statement,connection);
             return result;
@@ -56,7 +56,7 @@ public class ImageDaoImpl implements ImageDao {
      * @return java.lang.Integer
      */
     @Override
-    public Integer updateImage(Integer id, String name, String path) {
+    public Integer updateImage(Long id, String name, String path) {
         try{
             connection = DruidUtils.getConnection();
             String sql = "update `tb_image` " +
@@ -64,7 +64,7 @@ public class ImageDaoImpl implements ImageDao {
             statement = connection.prepareStatement(sql);
             statement.setString(1,name);
             statement.setString(2,path);
-            statement.setInt(3,id);
+            statement.setLong(3,id);
             Integer result = statement.executeUpdate();
             DruidUtils.close(resultSet,statement,connection);
             return result;
@@ -80,13 +80,13 @@ public class ImageDaoImpl implements ImageDao {
      * @return java.lang.Integer
      */
     @Override
-    public Integer deleteImage(Integer id) {
+    public Integer deleteImage(Long id) {
         try{
             connection = DruidUtils.getConnection();
             String sql = "update `tb_image` " +
                     "set `is_delete` = 1,`gmt_update` = now() where `id` = ?";
             statement = connection.prepareStatement(sql);
-            statement.setInt(1,id);
+            statement.setLong(1,id);
             Integer result = statement.executeUpdate();
             DruidUtils.close(resultSet,statement,connection);
             return result;
@@ -102,7 +102,7 @@ public class ImageDaoImpl implements ImageDao {
      * @return com.example.antiepidemic.domain.Image
      */
     @Override
-    public Image queryOneImage(Integer id) {
+    public Image queryOneImage(Long id) {
         try{
             connection = DruidUtils.getConnection();
             String sql = "select `id`,`name`,`path`,`is_delete`,`inputer`,`gmt_create`,`gmt_update` " +
@@ -110,7 +110,7 @@ public class ImageDaoImpl implements ImageDao {
                     "where  id = ? " +
                     "and `is_delete` = 0";
             statement = connection.prepareStatement(sql);
-            statement.setInt(1,id);
+            statement.setLong(1,id);
             resultSet = statement.executeQuery();
             Image image = null;
             while(resultSet.next()){

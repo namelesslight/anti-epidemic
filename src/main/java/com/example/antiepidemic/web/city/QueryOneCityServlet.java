@@ -1,9 +1,9 @@
-package com.example.antiepidemic.web.image;
+package com.example.antiepidemic.web.city;
 
-import com.example.antiepidemic.domain.Image;
+import com.example.antiepidemic.domain.City;
 import com.example.antiepidemic.result.Result;
-import com.example.antiepidemic.service.ImageService;
-import com.example.antiepidemic.service.impl.ImageServiceImpl;
+import com.example.antiepidemic.service.CityService;
+import com.example.antiepidemic.service.impl.CityServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.*;
@@ -12,10 +12,10 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet(name = "QueryImageServlet", value = "/queryImage")
-public class QueryImageServlet extends HttpServlet {
+@WebServlet(name = "QueryOneCityServlet", value = "/queryOneCity")
+public class QueryOneCityServlet extends HttpServlet {
 
-    private ImageService imageService = new ImageServiceImpl();
+    private CityService cityService = new CityServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class QueryImageServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         Map<String,Object> read = mapper.readValue(request.getReader(), Map.class);
         Integer id = (Integer) read.get("id");
-        Image result = imageService.queryOneImage(Long.valueOf(id));
-        mapper.writeValue(response.getWriter(),new Result("200",result,"/queryImage"));
+        City result = cityService.queryOneCity(Long.valueOf(id));
+        mapper.writeValue(response.getWriter(),new Result("200",result,"/queryOneCity"));
     }
 }

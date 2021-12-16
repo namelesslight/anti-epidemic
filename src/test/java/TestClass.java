@@ -9,7 +9,7 @@ public class TestClass {
 //        System.out.println(imageService.insertImage("图片1","路径1",1));
 //        System.out.println(imageService.insertImage("图片2","路径2",1));
 //        System.out.println(imageService.insertImage("图片3","路径3",1));
-        System.out.println(imageService.updateImage(4,"图片5","路径6"));
+        System.out.println(imageService.updateImage(4L,"图片5","路径6"));
 //        System.out.println(imageService.deleteImage(1));
 //        System.out.println(imageService.queryOneImage(2));
 //        System.out.println(imageService.listAllImage());

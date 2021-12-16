@@ -16,7 +16,7 @@ import java.util.Map;
 @WebServlet(name = "ListImageServlet", value = "/listImage")
 public class ListImageServlet extends HttpServlet {
 
-    ImageService imageService = new ImageServiceImpl();
+    private ImageService imageService = new ImageServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

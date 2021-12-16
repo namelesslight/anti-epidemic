@@ -9,6 +9,7 @@ import java.util.List;
  * @author ZCL
  */
 public interface ImageDao {
+
     /**
      * 添加图片
      * @param name 图片名
@@ -16,7 +17,7 @@ public interface ImageDao {
      * @param inputer 管理员id
      * @return java.lang.Integer
      */
-    public Integer insertImage(String name,String path,Integer inputer);
+    public Integer insertImage(String name,String path,Long inputer);
 
     /**
      * 修改图片
@@ -25,21 +26,21 @@ public interface ImageDao {
      * @param path 图片路径
      * @return java.lang.Integer
      */
-    public Integer updateImage(Integer id,String name,String path);
+    public Integer updateImage(Long id,String name,String path);
 
     /**
      * 删除图片
      * @param id 图片id
      * @return java.lang.Integer
      */
-    public Integer deleteImage(Integer id);
+    public Integer deleteImage(Long id);
 
     /**
      * 查询单个图片
      * @param id 图片id
      * @return com.example.antiepidemic.domain.Image
      */
-    public Image queryOneImage(Integer id);
+    public Image queryOneImage(Long id);
 
     /**
      * 查询多个图片
