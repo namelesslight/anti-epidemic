@@ -22,8 +22,7 @@ public class QueryImageServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/plain;charset=utf-8");
         ObjectMapper mapper = new ObjectMapper();
-        Map<String,Object> read = mapper.readValue(request.getReader(), Map.class);
-        Integer id = (Integer) read.get("id");
+        String id = (String) request.getParameter("id");
         Image result = imageService.queryOneImage(Long.valueOf(id));
         mapper.writeValue(response.getWriter(),new Result("200",result,"/queryImage"));
     }
